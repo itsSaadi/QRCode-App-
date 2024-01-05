@@ -9,12 +9,12 @@ export default function Scanner() {
   // }, [])
 
 const scannerProgress=()=>{
-  const scanner = new Html5QrcodeScanner('reader', {
+  const scanner = new Html5QrcodeScanner('qr-reader', {
     qrbox: {
       width: 250,
       height: 250,
     },
-    fps: 5
+    fps: 10
   })
   scanner.render(success, error)
 
@@ -32,7 +32,7 @@ const scannerProgress=()=>{
 
   return (
     <div className='container my-5'>
-      <h1 style={{fontFamily:'monospace',color:'purple'}}>QR Code Scanner</h1>
+      <h1 style={{fontFamily:'monospace',color:'purple'}}>QR Code and Bar Code Scanner</h1>
       {
         scanResult ? <div>Success <a href={"http://" + scanResult}>{scanResult}</a> </div> :
          <div id='reader'></div>

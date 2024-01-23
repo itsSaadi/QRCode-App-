@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="urlInput">
+    <button type="button" onclick="generateQRCode()">GenerateQRCode</button>
+    <div id="qrcode">
+
+    </div>
+</body>
+<script>
+    function generateQRCode() {
+        console.log('object')
+    var url = document.getElementById("urlInput").value
+    var qrcodeDiv = document.getElementById("qrcode"); 
+    qrcodeDiv.innerHTML = '';
+
+    let qrcode = new QRCode(qrcodeDiv, {
+        text: url,
+        width: 128,
+        height: 128
+    })
+}
+</script>
+</html>

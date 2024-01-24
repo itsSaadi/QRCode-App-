@@ -34,7 +34,7 @@ const scannerProgress=()=>{
     <div className='container my-5'>
       <h1 style={{fontFamily:'monospace',color:'purple'}}>QR Code and Bar Code Scanner</h1>
       {
-        scanResult ? <div>Success <a href={scanResult}>{scanResult}</a> </div> :
+        scanResult ? <div>Success : <a target='_blank' href={`${scanResult}`}>{scanResult}</a> </div> :
          <div id='qr-reader'></div>
       }
       <div>

@@ -20,6 +20,9 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link" href='/scanner' >Scan</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" href='/products' >Products</Link>
+                            </li>
                         </ul>
                        
                     </div>

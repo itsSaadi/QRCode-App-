@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import Button from '../button/page'
 
@@ -38,10 +37,6 @@ export default async function Products() {
                             )
                         })
                     }
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', }}>
-                    <button className="button btn btn-success" onClick={() => handlePage(currentPage + 1)}>Next</button>
-                    <button className="button btn btn-warning" onClick={() => handlePage(currentPage - 1)}>Previous</button>
                 </div>
             </div>
         </>

@@ -1,5 +1,7 @@
 import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+
 
 import './globals.css'
 import Navbar from './Navbar';
@@ -16,7 +18,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
       <Navbar/>
-        {children}
+      <React.StrictMode>
+      {children}
+      </React.StrictMode>
+
      
       </body>
     </html>

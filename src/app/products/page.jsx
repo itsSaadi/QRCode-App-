@@ -1,11 +1,20 @@
 import React from 'react'
 import Button from '../button/page'
+import Image from 'next/image'
+import { Labrada } from 'next/font/google'
 
 const fetchData = async () => {
+   
     const data = await fetch('https://dummyjson.com/products')
     const result = await data.json()
     return result.products
 }
+const font = Labrada({
+    weight: '700',
+    subsets: ['latin']
+})
+
+
 
 export default async function Products() {
 
@@ -19,14 +28,14 @@ export default async function Products() {
     return (
         <>
             <div className="container my-5">
-                <h1 style={{ fontFamily: 'monospace' }}> Data from Server Component</h1>
+                <h1 className={font.className} > Data from Server Component</h1>
                 <div className="row my-5">
                     {
                         currentProducts.map((items, index) => {
                             return (
                                 <div className='col-md-2 '>
                                     <div class="card" key={index} style={{ width: 'auto', gap: '5px', margin: '10px' }}>
-                                        <img src={`${items.images[0]}`} class="card-img-top" alt="..." height={'120px'} width={'30px'} />
+                                        <Image src={`${items.images[0]}`} className="card-img-top" width={50} height={100} />
                                         <div class="card-body">
                                             <h5 class="card-title">{items.title.slice(0, 7)}</h5>
                                             <p class="card-text">{items.price}</p>

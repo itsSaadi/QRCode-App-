@@ -1,12 +1,14 @@
 "use client";
 import { Html5QrcodeScanner } from 'html5-qrcode'
 import { useEffect, useState } from 'react';
+import custom from '../custom.module.css'
 export default function Scanner() {
   const [scanResult, setScanResult] = useState(null)
+  const [color,setColor]=useState('red')
 
-  // useEffect(() => {
-    
-  // }, [])
+  useEffect(() => {
+    console.warn('warning')
+  }, [])
 
 const scannerProgress=()=>{
   const scanner = new Html5QrcodeScanner('qr-reader', {
@@ -32,7 +34,7 @@ const scannerProgress=()=>{
 
   return (
     <div className='container my-5'>
-      <h1 style={{fontFamily:'monospace',color:'purple'}}>QR Code and Bar Code Scanner</h1>
+      <h1 className={color=='red'?custom.color:custom.color2}>QR Code and Bar Code Scanner</h1>
       {
         scanResult ? <div>Success : <a target='_blank' href={`${scanResult}`}>{scanResult}</a> </div> :
          <div id='qr-reader'></div>

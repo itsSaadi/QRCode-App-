@@ -11,7 +11,7 @@ export default function ReactHooks() {
     const [data, setData] = useState([])
     useEffect(() => {
         console.log('State is updated')
-        setMessage('State Value')
+        setMessage('State Valuee')
     }, [state])
     useEffect(() => {
         const getData = async () => {

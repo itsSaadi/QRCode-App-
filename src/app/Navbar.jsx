@@ -3,12 +3,12 @@ import Link from 'next/link'
 
 
 export default function Navbar() {
-  return (
-   <>
-    <nav className="navbar navbar-expand-lg bg-primary">
+    return (
+        <>
+            <nav className="navbar navbar-expand-lg bg-primary">
                 <div className="container-fluid">
                     <Link className="navbar-brand" href="/">QRCode</Link>
-                    
+
                     <div className=" navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
@@ -27,10 +27,10 @@ export default function Navbar() {
                                 <Link className="nav-link" href='/reacthooks' >React Hooks</Link>
                             </li>
                         </ul>
-                       
+
                     </div>
                 </div>
             </nav>
-   </>
-  )
+        </>
+    )
 }

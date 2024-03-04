@@ -2,9 +2,10 @@ import React from 'react'
 import Button from '../button/page'
 import Image from 'next/image'
 import { Labrada } from 'next/font/google'
+import Link from 'next/link'
 
 const fetchData = async () => {
-   
+
     const data = await fetch('https://dummyjson.com/products')
     const result = await data.json()
     return result.products
@@ -39,7 +40,11 @@ export default async function Products() {
                                         <div class="card-body">
                                             <h5 class="card-title">{items.title.slice(0, 7)}</h5>
                                             <p class="card-text">{items.price}</p>
-                                            <Button func={items.id} />
+
+                                            <Link className='btn btn-primary' href={`products/${items.id}`} >
+                                                Details
+                                            </Link>
+                                            {/* <Button func={items.id} /> */}
                                         </div>
                                     </div>
                                 </div>
